@@ -1,0 +1,49 @@
+body {
+    background-color:rgb(203, 159, 159); /* rosa claro */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color:rgb(0, 0, 0); /* rosa escuro */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(203, 159, 159); /* rosa médio */
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    background-color:rgb(203, 159, 159); /* rosa mais escuro no hover */
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color:rgb(0, 0, 0); /* rosa escuro */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
