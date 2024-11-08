@@ -1,29 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 * {
-    padding: 0%;
-    margin: 0%;
-    font-family: 'Inter' , sans-serif;
-
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
+body {
+    background-color: #ffffff;
+}
+
+/* Header */
 header { 
     background-color: #24252a;
     box-shadow: 0px 3px 10px #464646;
 }
+
 .nav-bar {
     display: flex;
     justify-content: space-between;
     padding: 1.5rem 6rem;
-}
-
-.logo {
-    display: flex;
     align-items: center;
 }
 
 .logo h1 {
-    color: #ffffff ;
+    color: #ffffff;
 }
 
 .nav-list {
@@ -55,29 +57,35 @@ header {
 .mobile-menu {
     display: none;
 }
- @media screen and (max-width: 730px) {
+
+@media screen and (max-width: 730px) {
     .nav-bar {
         padding: 1.5rem 4rem;
     }
+
+    .nav-list ul {
+        display: none;
+    }
+
     .nav-item {
         display: none;
     }
-    
+
     .mobile-menu-icon {
         display: block;
     }
+
     .mobile-menu-icon button {
         background-color: transparent;
         border: none;
         cursor: pointer;
-
     }
+
     .mobile-menu ul {
         display: flex;
         flex-direction: column;
         text-align: center;
         padding-bottom: 1rem;
-         
     }
 
     .mobile-menu .nav-item {
@@ -85,26 +93,59 @@ header {
         padding-top: 1.2rem; 
     }
 
-    .open{
+    .mobile-menu.open {
         display: block;
-
     }
- }
 
- img{ width: 30%;
-    height: auto;
- }
- 
-body{
-    background-color:#ffffff;
-}  
- 
-.image {
-    width: 300px;
-    height: 200px;
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
+/* Carrossel */
+.carousel-container {
+    position: relative;
+    max-width: 50%; /* Ajusta a largura do carrossel */
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%; /* Corrigido para garantir que apenas uma imagem seja exibida */
+    box-sizing: border-box;
+    position: center;
+}
+
+.carousel img {
+    width: 100%; /* A imagem se ajusta para ocupar toda a largura do item */
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+    border-radius: 10px;
+}
+
+/* Botões de navegação */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(203, 159, 159);
+    color: white;
+    border: none;
+    padding: 10px;
     cursor: pointer;
-  }
-  .gallery {
+    font-size: 18px;
+    z-index: 1;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Galeria */
+.gallery {
     background-color: rgb(203, 159, 159);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -113,21 +154,74 @@ body{
 }
 
 .gallery img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* As imagens ocupam 100% da largura do seu contêiner */
+    height: 150px; /* Define uma altura fixa para as imagens */
+    object-fit: cover; /* Faz com que a imagem cubra a área do contêiner sem distorcer */
     border-radius: 20px;
 }
-p{
+
+/* Parágrafo e título */
+p {
     border-style: solid;
-    border-color:rgb(203, 159, 159) ;
-    font-size: 25px;
+    border-color: rgb(203, 159, 159);
+    font-size: 1.2rem;
     margin: 20px;
-    
+    padding: 20px;
 }
-h2{
-    font-size: 75px;
+
+h2 {
+    font-size: 3rem;
     color: #ffffff;
     margin: 20px;
-    background-color:rgb(203, 159, 159) ;
+    background-color: rgb(203, 159, 159);
+    padding: 10px;
+}
 
+/* Footer */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsividade para o carrossel em telas menores */
+@media screen and (max-width: 600px) {
+    .carousel-container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .carousel img {
+        border-radius: 5px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    .gallery img {
+        width: 100%; /* As imagens ocupam 100% da largura do seu contêiner */
+        height: 200px; /* Altura fixa, mesmo em telas pequenas */
+    }
+}
+
+/* Estilo extra para o parágrafo com a classe p1 */
+.p1{
+    border-style: solid;
+    border-color: black;
+    font-size: 1.2rem;
+    margin: 20px;
+    padding: 20px;
 }
